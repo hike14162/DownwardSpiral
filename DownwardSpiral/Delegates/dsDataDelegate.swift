@@ -1,6 +1,7 @@
 import Foundation
 
 public protocol dsDataDelegate {
-    func dsSimulatorPoint(ftpPoint: dsFtpDataPoint)
-    func dsSimulatorFullPoints(ftpFullPoint: [dsFtpDataPoint])
+    func dsSimulatorPoint(ftpPoint: dsFtpDataPoint, seconds: Double)
+    func dsSimulatorFullPoints(ftpFullPoint: [dsFtpDataPoint], seconds: Double)
+    func dsSimulatorDone()
 }

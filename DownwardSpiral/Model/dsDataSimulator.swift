@@ -4,6 +4,8 @@ public class dsDataSimulator {
     public var delegate: dsDataDelegate?
 
     internal var ftpDataPoints: [dsFtpDataPoint]
+    internal var timeCount: Int = 0
+    internal var okToSimulate = false
     
     init() {
         ftpDataPoints = []
@@ -17,10 +19,43 @@ public class dsDataSimulator {
         fillTimeGaps()
     }
     
+    public func simulateData(simulationMode: dsSimulateMode, interval: Double) {
+        okToSimulate = true
+        if simulationMode == .fullData {
+            if let dlgt = delegate {
+                dlgt.dsSimulatorFullPoints(ftpFullPoint: ftpDataPoints, seconds: ftpDataPoints[ftpDataPoints.count-1].start)
+            }
+        } else {
+            timeCount = 0
+            let simTimer = Timer(timeInterval: interval, target: self, selector:#selector(self.onSimulatorTick(_:)), userInfo: nil, repeats: true)
+            RunLoop.main.add(simTimer, forMode: .default)
+        }
+    }
+    
+    @objc func onSimulatorTick(_ timer: Timer) {
+        if timeCount == ftpDataPoints.count {
+            if let dlgt = delegate {
+                dlgt.dsSimulatorDone()
+                timer.invalidate()
+            }
+        } else if !okToSimulate {
+            timer.invalidate()
+        } else {
+            if let dlgt = delegate {
+                dlgt.dsSimulatorPoint(ftpPoint: ftpDataPoints[timeCount], seconds: Double(timeCount))
+                timeCount += 1
+            }
+        }
+    }
+    
     public func getData() -> [dsFtpDataPoint] {
         return ftpDataPoints
     }
 
+    public func stopSimulating() {
+        okToSimulate = false
+    }
+    
     internal func loadAndParse(fileName: String, fileType: String) {
         if let stubDataPath = Bundle.main.path(forResource: fileName, ofType: fileType, inDirectory: "") {
             do {
