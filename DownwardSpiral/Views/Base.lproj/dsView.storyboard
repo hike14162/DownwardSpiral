@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Downward Spiral-->
+        <!--Downward Spiral Challenge-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="dsViewController" customModule="DownwardSpiral" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,13 +52,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="load" translatesAutoresizingMaskIntoConstraints="NO" id="d0d-kC-mJt">
-                                <rect key="frame" x="89" y="477" width="197" height="135"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="d0d-kC-mJt">
+                                <rect key="frame" x="89" y="321" width="197" height="135"/>
+                                <color key="backgroundColor" red="0.35396337509155273" green="0.05868598073720932" blue="0.78548997640609741" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="41R-p5-TAK"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="135" id="6T4-oG-7nc"/>
                                     <constraint firstAttribute="width" constant="197" id="6hB-WR-qZs"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="197" id="FSV-Hj-2F0"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -67,11 +66,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tGB-5L-6Lm" secondAttribute="trailing" symbolic="YES" id="3dc-vh-Afn"/>
                             <constraint firstItem="tGB-5L-6Lm" firstAttribute="top" secondItem="xUv-u8-uEB" secondAttribute="bottom" constant="8" id="8FN-oB-C5v"/>
                             <constraint firstItem="xUv-u8-uEB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Aft-Sv-GPF"/>
+                            <constraint firstItem="d0d-kC-mJt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="55" id="Gy5-jf-Cy4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7vC-xx-koG" secondAttribute="trailing" symbolic="YES" id="JuK-aq-7MN"/>
                             <constraint firstItem="7vC-xx-koG" firstAttribute="leading" secondItem="tGB-5L-6Lm" secondAttribute="trailing" constant="75" id="L3f-Wj-1tU"/>
                             <constraint firstItem="xUv-u8-uEB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PKQ-hG-u0B"/>
                             <constraint firstItem="VKg-Iu-Zlo" firstAttribute="top" secondItem="tGB-5L-6Lm" secondAttribute="bottom" id="S1H-l1-uRD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d0d-kC-mJt" secondAttribute="bottom" constant="55" id="WpS-8c-N6l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d0d-kC-mJt" secondAttribute="bottom" constant="10" id="WpS-8c-N6l"/>
                             <constraint firstItem="VKg-Iu-Zlo" firstAttribute="leading" secondItem="tGB-5L-6Lm" secondAttribute="leading" id="aRy-iG-GcK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VKg-Iu-Zlo" secondAttribute="trailing" symbolic="YES" id="apc-yy-tyi"/>
                             <constraint firstItem="tGB-5L-6Lm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cQt-WU-x9P"/>
@@ -83,8 +83,26 @@
                             <constraint firstItem="xUv-u8-uEB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ymq-RE-aDr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WpS-8c-N6l"/>
+                                <exclude reference="Gy5-jf-Cy4"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="WpS-8c-N6l"/>
+                                <exclude reference="Gy5-jf-Cy4"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="WpS-8c-N6l"/>
+                                <include reference="Gy5-jf-Cy4"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Downward Spiral" id="QIn-rg-EQH">
+                    <navigationItem key="navigationItem" title="Downward Spiral Challenge" id="QIn-rg-EQH">
                         <rightBarButtonItems>
                             <barButtonItem enabled="NO" systemItem="stop" id="teW-r3-ckq">
                                 <color key="tintColor" red="0.76470588235294112" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -175,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxq-Nw-p0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952.8" y="-682.3088455772114"/>
+            <point key="canvasLocation" x="3225" y="-682"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="toY-6b-JVb">
@@ -211,10 +229,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoC-wy-nYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="-682"/>
+            <point key="canvasLocation" x="2318" y="-682"/>
         </scene>
     </scenes>
     <resources>
-        <image name="load" width="294.75" height="202.5"/>
+        <image name="LaunchImage" width="294.75" height="202.5"/>
     </resources>
 </document>

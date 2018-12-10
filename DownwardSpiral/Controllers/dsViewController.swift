@@ -1,7 +1,7 @@
 import UIKit
 import Charts
 
-class dsViewController: UIViewController, dsDataDelegate, dsSimSetupDelegate {
+class dsViewController: UIViewController {
     @IBOutlet weak var dsChartView: BarChartView!
     
     @IBOutlet weak var durationTitleLabel: UILabel!
@@ -19,16 +19,18 @@ class dsViewController: UIViewController, dsDataDelegate, dsSimSetupDelegate {
         dsData.stopSimulating()
     }
     
+    // access to the simulation data
+    private let dsData = dsDataSimulator()
     
-//    internal let dsData = dsDataSimulator(fileName: "smallData", fileType: "json")
-    internal let dsData = dsDataSimulator() // full data
-    internal var timedPoints: [dsFtpDataPoint] = []
+    private var timedPoints: [dsFtpDataPoint] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set navigation bar style attributes
         self.navigationController?.navigationBar.titleTextAttributes = (dsHelper.getNavBarAttributes() as! [NSAttributedString.Key : Any])
 
-        // style chart
+        // Set chart style
         dsChartView.xAxis.drawLabelsEnabled = false
         dsChartView.xAxis.drawGridLinesEnabled = false
         dsChartView.scaleXEnabled = false
@@ -41,24 +43,19 @@ class dsViewController: UIViewController, dsDataDelegate, dsSimSetupDelegate {
         dsData.delegate = self
     }
 
-
-    // dsDataDelegate implementations
-    func dsSimulatorPoint(ftpPoint: dsFtpDataPoint, seconds: Double) {
-        timedPoints.append(ftpPoint)
-        drawChart(ftpPoints: timedPoints)
-        updateLabels(seconds: seconds, ftpValue: ftpPoint.ftp)
-    }
-    
-    func dsSimulatorFullPoints(ftpFullPoint: [dsFtpDataPoint], seconds: Double) {
-        drawChart(ftpPoints: ftpFullPoint)
-    }
-    
-    func dsSimulatorDone() {
-        stopButton.isEnabled = false
-        startButton.isEnabled = true
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "simulateSetup" {
+            // Set the setup controler delegate
+            guard
+                let simSetupNavController = segue.destination as? UINavigationController,
+                let simSetupController = simSetupNavController.viewControllers[0] as? dsSimulaterSetupController else {
+                return
+            }
+            simSetupController.delegate = self
+        }
     }
 
-    internal func updateLabels(seconds: Double, ftpValue: Double) {
+    private func updateLabels(seconds: Double, ftpValue: Double) {
         // for first run show progress labels
         if durationTitleLabel.isHidden {
             durationTitleLabel.isHidden = false
@@ -78,6 +75,7 @@ class dsViewController: UIViewController, dsDataDelegate, dsSimSetupDelegate {
             durationLabel.text = "\(Int(min)) min \(Int(sec)) sec"
         }
         
+        // Set ftpLabel color depending on value level
         if (ftpValue >= 0) && (ftpValue < 0.75) {
             ftpLabel.textColor = dsHelper.greenColor()
         } else if ((ftpValue >= 0.75) && (ftpValue < 1.25)) {
@@ -88,49 +86,75 @@ class dsViewController: UIViewController, dsDataDelegate, dsSimSetupDelegate {
         ftpLabel.text = "\(ftpValue)"
     }
     
-    internal func drawChart(ftpPoints: [dsFtpDataPoint]) {
+    private func drawChart(ftpPoints: [dsFtpDataPoint]) {
         var entries: [ChartDataEntry] = []
         for (i, point) in ftpPoints.enumerated() {
             entries.append(BarChartDataEntry(x: Double(i), y: point.ftp))
         }
         
-        let dataSet = BarChartDataSet(values: entries, label: "ftp")
-        dataSet.colors = [dsHelper.purpleColor()]
+        //Stylize the chart's bars
+        let dataSet = BarChartDataSet(values: entries, label: "")
+        dataSet.colors = [dsHelper.graphColor()]
         dataSet.barBorderColor = .clear
         dataSet.barBorderWidth = 0
         dataSet.drawValuesEnabled = false
         
+        // Set data in chart and force draw
         let data = BarChartData(dataSets: [dataSet])
         data.barWidth = 1.3
         dsChartView.data = data
 
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "simulateSetup" {
-            let simSetupNavController = segue.destination as! UINavigationController
-            let simSetupController = simSetupNavController.viewControllers[0] as! dsSimulaterSetupController
-            simSetupController.delegate = self
-        }
+}
+
+// Extension to handle dsDataDelegate implementations
+extension dsViewController: dsDataDelegate {
+    // Add a new single data point to the chart
+    func dsSimulatorPoint(ftpPoint: dsFtpDataPoint, seconds: Double) {
+        timedPoints.append(ftpPoint)
+        drawChart(ftpPoints: timedPoints)
+        updateLabels(seconds: seconds, ftpValue: ftpPoint.ftp)
     }
     
-    // dsSimSetupDelegate implementation
-    func beginSimulation(speed: dsSimulateSpeed) {
-        timedPoints = []
-        switch speed {
-        case .speedRealTime:
-            dsData.simulateData(simulationMode: .timedData, interval: 1.0)
-        case .speed2X:
-            dsData.simulateData(simulationMode: .timedData, interval: 0.5)
-        case .speed5X:
-            dsData.simulateData(simulationMode: .timedData, interval: 0.2)
-        case .speed10X:
-            dsData.simulateData(simulationMode: .timedData, interval: 0.1)
+    // Add a collection of data points to the chart
+    func dsSimulatorMultiPoints(ftpPoints: [dsFtpDataPoint], seconds: Double) {
+        var lastFtpValue = 0.0
+        for ftpPoint in ftpPoints {
+            timedPoints.append(ftpPoint)
+            lastFtpValue = ftpPoint.ftp
         }
-        stopButton.isEnabled = true
-        startButton.isEnabled = false
-        
+        drawChart(ftpPoints: timedPoints)
+        updateLabels(seconds: seconds, ftpValue: lastFtpValue)
+    }
+    
+    // Add all points to the chart
+    func dsSimulatorFullPoints(ftpFullPoint: [dsFtpDataPoint], seconds: Double) {
+        drawChart(ftpPoints: ftpFullPoint)
+    }
+    
+    func dsSimulatorDone() {
+        stopButton.isEnabled = false
+        startButton.isEnabled = true
     }
 
 }
 
+// Extension to handle dsSimSetupDelegate implementation
+extension dsViewController: dsSimSetupDelegate {
+    // Set the speed of the simulation as set in the setup screen
+    func beginSimulation(speed: dsSimulateSpeed) {
+        timedPoints = []
+        switch speed {
+        case .speedRealTime:
+            dsData.simulateData(simulationMode: .timedData, interval: 1.0, secondChunkSize: 1)
+        case .speed2X:
+            dsData.simulateData(simulationMode: .timedData, interval: 0.5, secondChunkSize: 1)
+        case .speed5X:
+            dsData.simulateData(simulationMode: .timedData, interval: 1.0, secondChunkSize: 5)
+        case .speed10X:
+            dsData.simulateData(simulationMode: .timedData, interval: 0.5, secondChunkSize: 5)
+        }
+        stopButton.isEnabled = true
+        startButton.isEnabled = false        
+    }
+}

@@ -1,0 +1,28 @@
+{
+"inputs": [
+{
+    "type": "target",
+    "start": 0,
+    "ftp": 0.5
+},
+{
+    "type": "target",
+    "start": 111,
+    "ftp": 1.4
+},
+{
+    "type": "target",
+    "start": 171,
+    "ftp": 0.7
+},
+{
+    "type": "target",
+    "start": 231,
+    "ftp": 1.5
+},
+{
+    "type": "target",
+    "start": 324,
+    "ftp": 0.85
+}]
+}

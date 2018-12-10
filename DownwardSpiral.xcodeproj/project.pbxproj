@@ -12,8 +12,7 @@
 		52770F9A21B99AE0001CC374 /* dsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52770F9821B99AE0001CC374 /* dsView.storyboard */; };
 		52770F9C21B99AE2001CC374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52770F9B21B99AE2001CC374 /* Assets.xcassets */; };
 		52770F9F21B99AE2001CC374 /* dsLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52770F9D21B99AE2001CC374 /* dsLaunchScreen.storyboard */; };
-		52770FAA21B99AE3001CC374 /* DownwardSpiralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FA921B99AE3001CC374 /* DownwardSpiralTests.swift */; };
-		52770FB521B99AE3001CC374 /* DownwardSpiralUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FB421B99AE3001CC374 /* DownwardSpiralUITests.swift */; };
+		52770FAA21B99AE3001CC374 /* DownwardSpiralDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FA921B99AE3001CC374 /* DownwardSpiralDataTests.swift */; };
 		52770FC821B99C2A001CC374 /* dsDataSimulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FC721B99C2A001CC374 /* dsDataSimulator.swift */; };
 		52770FCA21B9A09C001CC374 /* dsFtpDataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FC921B9A09C001CC374 /* dsFtpDataPoint.swift */; };
 		52770FCC21B9A1A0001CC374 /* dsRawData.json in Resources */ = {isa = PBXBuildFile; fileRef = 52770FCB21B9A1A0001CC374 /* dsRawData.json */; };
@@ -26,17 +25,11 @@
 		52770FF221BAF8D5001CC374 /* dsSimulateSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FF121BAF8D5001CC374 /* dsSimulateSpeed.swift */; };
 		52770FF421BAFD64001CC374 /* dsSimSetupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52770FF321BAFD64001CC374 /* dsSimSetupDelegate.swift */; };
 		52770FF621BB1013001CC374 /* smallData.json in Resources */ = {isa = PBXBuildFile; fileRef = 52770FF521BB1013001CC374 /* smallData.json */; };
+		52770FFC21BEF6BB001CC374 /* dsArtwork.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52770FFA21BEF59B001CC374 /* dsArtwork.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		52770FA621B99AE3001CC374 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52770F8921B99ADF001CC374 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 52770F9021B99AE0001CC374;
-			remoteInfo = DownwardSpiral;
-		};
-		52770FB121B99AE3001CC374 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 52770F8921B99ADF001CC374 /* Project object */;
 			proxyType = 1;
@@ -49,13 +42,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
 			remoteInfo = Charts;
-		};
-		52770FE221BA19BD001CC374 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52770FDB21BA19BD001CC374 /* Charts.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
-			remoteInfo = ChartsTests;
 		};
 		52770FE621BA19F8001CC374 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -89,11 +75,8 @@
 		52770F9E21B99AE2001CC374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/dsLaunchScreen.storyboard; sourceTree = "<group>"; };
 		52770FA021B99AE2001CC374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52770FA521B99AE3001CC374 /* DownwardSpiralTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownwardSpiralTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52770FA921B99AE3001CC374 /* DownwardSpiralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownwardSpiralTests.swift; sourceTree = "<group>"; };
+		52770FA921B99AE3001CC374 /* DownwardSpiralDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownwardSpiralDataTests.swift; sourceTree = "<group>"; };
 		52770FAB21B99AE3001CC374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52770FB021B99AE3001CC374 /* DownwardSpiralUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DownwardSpiralUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52770FB421B99AE3001CC374 /* DownwardSpiralUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownwardSpiralUITests.swift; sourceTree = "<group>"; };
-		52770FB621B99AE3001CC374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52770FC721B99C2A001CC374 /* dsDataSimulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dsDataSimulator.swift; sourceTree = "<group>"; };
 		52770FC921B9A09C001CC374 /* dsFtpDataPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dsFtpDataPoint.swift; sourceTree = "<group>"; };
 		52770FCB21B9A1A0001CC374 /* dsRawData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dsRawData.json; sourceTree = "<group>"; };
@@ -105,6 +88,7 @@
 		52770FF121BAF8D5001CC374 /* dsSimulateSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dsSimulateSpeed.swift; sourceTree = "<group>"; };
 		52770FF321BAFD64001CC374 /* dsSimSetupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dsSimSetupDelegate.swift; sourceTree = "<group>"; };
 		52770FF521BB1013001CC374 /* smallData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smallData.json; sourceTree = "<group>"; };
+		52770FFA21BEF59B001CC374 /* dsArtwork.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = dsArtwork.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,13 +107,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		52770FAD21B99AE3001CC374 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -138,7 +115,6 @@
 			children = (
 				52770F9321B99AE0001CC374 /* DownwardSpiral */,
 				52770FA821B99AE3001CC374 /* DownwardSpiralTests */,
-				52770FB321B99AE3001CC374 /* DownwardSpiralUITests */,
 				52770F9221B99AE0001CC374 /* Products */,
 				52770FDB21BA19BD001CC374 /* Charts.xcodeproj */,
 			);
@@ -149,7 +125,6 @@
 			children = (
 				52770F9121B99AE0001CC374 /* DownwardSpiral.app */,
 				52770FA521B99AE3001CC374 /* DownwardSpiralTests.xctest */,
-				52770FB021B99AE3001CC374 /* DownwardSpiralUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +140,7 @@
 				52770FC221B99B01001CC374 /* Delegates */,
 				52770FC621B99B58001CC374 /* Bundle Assets */,
 				52770F9B21B99AE2001CC374 /* Assets.xcassets */,
+				52770FFA21BEF59B001CC374 /* dsArtwork.xcassets */,
 				52770FA021B99AE2001CC374 /* Info.plist */,
 			);
 			path = DownwardSpiral;
@@ -173,19 +149,10 @@
 		52770FA821B99AE3001CC374 /* DownwardSpiralTests */ = {
 			isa = PBXGroup;
 			children = (
-				52770FA921B99AE3001CC374 /* DownwardSpiralTests.swift */,
+				52770FA921B99AE3001CC374 /* DownwardSpiralDataTests.swift */,
 				52770FAB21B99AE3001CC374 /* Info.plist */,
 			);
 			path = DownwardSpiralTests;
-			sourceTree = "<group>";
-		};
-		52770FB321B99AE3001CC374 /* DownwardSpiralUITests */ = {
-			isa = PBXGroup;
-			children = (
-				52770FB421B99AE3001CC374 /* DownwardSpiralUITests.swift */,
-				52770FB621B99AE3001CC374 /* Info.plist */,
-			);
-			path = DownwardSpiralUITests;
 			sourceTree = "<group>";
 		};
 		52770FC221B99B01001CC374 /* Delegates */ = {
@@ -238,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				52770FE121BA19BD001CC374 /* Charts.framework */,
-				52770FE321BA19BD001CC374 /* ChartsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,24 +266,6 @@
 			productReference = 52770FA521B99AE3001CC374 /* DownwardSpiralTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		52770FAF21B99AE3001CC374 /* DownwardSpiralUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 52770FBF21B99AE3001CC374 /* Build configuration list for PBXNativeTarget "DownwardSpiralUITests" */;
-			buildPhases = (
-				52770FAC21B99AE3001CC374 /* Sources */,
-				52770FAD21B99AE3001CC374 /* Frameworks */,
-				52770FAE21B99AE3001CC374 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				52770FB221B99AE3001CC374 /* PBXTargetDependency */,
-			);
-			name = DownwardSpiralUITests;
-			productName = DownwardSpiralUITests;
-			productReference = 52770FB021B99AE3001CC374 /* DownwardSpiralUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -332,10 +280,6 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					52770FA421B99AE3001CC374 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 52770F9021B99AE0001CC374;
-					};
-					52770FAF21B99AE3001CC374 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 52770F9021B99AE0001CC374;
 					};
@@ -362,7 +306,6 @@
 			targets = (
 				52770F9021B99AE0001CC374 /* DownwardSpiral */,
 				52770FA421B99AE3001CC374 /* DownwardSpiralTests */,
-				52770FAF21B99AE3001CC374 /* DownwardSpiralUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -375,13 +318,6 @@
 			remoteRef = 52770FE021BA19BD001CC374 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		52770FE321BA19BD001CC374 /* ChartsTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ChartsTests.xctest;
-			remoteRef = 52770FE221BA19BD001CC374 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -389,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52770FFC21BEF6BB001CC374 /* dsArtwork.xcassets in Resources */,
 				52770F9F21B99AE2001CC374 /* dsLaunchScreen.storyboard in Resources */,
 				52770FF621BB1013001CC374 /* smallData.json in Resources */,
 				52770F9C21B99AE2001CC374 /* Assets.xcassets in Resources */,
@@ -398,13 +335,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		52770FA321B99AE3001CC374 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52770FAE21B99AE3001CC374 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -435,15 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52770FAA21B99AE3001CC374 /* DownwardSpiralTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		52770FAC21B99AE3001CC374 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				52770FB521B99AE3001CC374 /* DownwardSpiralUITests.swift in Sources */,
+				52770FAA21B99AE3001CC374 /* DownwardSpiralDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,11 +376,6 @@
 			isa = PBXTargetDependency;
 			target = 52770F9021B99AE0001CC374 /* DownwardSpiral */;
 			targetProxy = 52770FA621B99AE3001CC374 /* PBXContainerItemProxy */;
-		};
-		52770FB221B99AE3001CC374 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 52770F9021B99AE0001CC374 /* DownwardSpiral */;
-			targetProxy = 52770FB121B99AE3001CC374 /* PBXContainerItemProxy */;
 		};
 		52770FE721BA19F8001CC374 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -611,6 +528,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46527JQ8T6;
 				INFOPLIST_FILE = DownwardSpiral/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,6 +548,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46527JQ8T6;
 				INFOPLIST_FILE = DownwardSpiral/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -647,6 +566,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DownwardSpiralTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -667,6 +587,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DownwardSpiralTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -678,44 +599,6 @@
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DownwardSpiral.app/DownwardSpiral";
-			};
-			name = Release;
-		};
-		52770FC021B99AE3001CC374 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DownwardSpiralUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thecarrnation.DownwardSpiralUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DownwardSpiral;
-			};
-			name = Debug;
-		};
-		52770FC121B99AE3001CC374 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = DownwardSpiralUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thecarrnation.DownwardSpiralUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DownwardSpiral;
 			};
 			name = Release;
 		};
@@ -745,15 +628,6 @@
 			buildConfigurations = (
 				52770FBD21B99AE3001CC374 /* Debug */,
 				52770FBE21B99AE3001CC374 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		52770FBF21B99AE3001CC374 /* Build configuration list for PBXNativeTarget "DownwardSpiralUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				52770FC021B99AE3001CC374 /* Debug */,
-				52770FC121B99AE3001CC374 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

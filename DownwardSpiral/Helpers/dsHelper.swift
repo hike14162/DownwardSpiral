@@ -14,8 +14,8 @@ open class dsHelper {
         return UIColor(red: 195/255, green: 0.0, blue: 0.0, alpha: 1)
     }
     
-    open class func purpleColor() -> UIColor {
-        return UIColor(red: 141/255, green: 0.0, blue: 1.0, alpha: 1)
+    open class func graphColor() -> UIColor {
+        return UIColor(red: 93/255, green: 204/255, blue: 2/255, alpha: 1)
     }
 
     open class func getNavBarAttributes() -> NSDictionary
@@ -23,7 +23,7 @@ open class dsHelper {
         let shadow = NSShadow()
         shadow.shadowColor = UIColor.clear
         
-        return NSDictionary(objects: [redColor(), shadow, UIFont(name: "Copperplate", size: 18.0)!], forKeys: [NSAttributedString.Key.foregroundColor  as NSCopying, NSAttributedString.Key.shadow as NSCopying, NSAttributedString.Key.font as NSCopying])
+        return NSDictionary(objects: [UIColor.black, shadow, UIFont(name: "Kohinoor Bangla", size: 18.0)!], forKeys: [NSAttributedString.Key.foregroundColor  as NSCopying, NSAttributedString.Key.shadow as NSCopying, NSAttributedString.Key.font as NSCopying])
     }
 
 }

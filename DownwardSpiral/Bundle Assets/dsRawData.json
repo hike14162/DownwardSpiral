@@ -297,7 +297,7 @@
 },
 {
     "type": "target",
-    "start": 3300,
+    "start": 3300, 
     "ftp": 0.5
 },
 ]

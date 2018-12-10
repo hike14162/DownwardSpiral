@@ -1,5 +1,5 @@
 import Foundation
 
-protocol dsSimSetupDelegate {
+public protocol dsSimSetupDelegate {
     func beginSimulation(speed: dsSimulateSpeed)
 }
