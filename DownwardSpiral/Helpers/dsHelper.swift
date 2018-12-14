@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 open class dsHelper {
+    // MARK: - Color Methods
     open class func greenColor() -> UIColor {
         return UIColor(red: 0.0, green: 128/255, blue: 0.0, alpha: 1)
     }
@@ -18,6 +19,7 @@ open class dsHelper {
         return UIColor(red: 93/255, green: 204/255, blue: 2/255, alpha: 1)
     }
 
+    // MARK: - Navigation bar attribute method
     open class func getNavBarAttributes() -> NSDictionary
     {
         let shadow = NSShadow()

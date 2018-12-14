@@ -2,6 +2,7 @@ import UIKit
 import Charts
 
 class dsViewController: UIViewController {
+    // MARK: - View Outlets
     @IBOutlet weak var dsChartView: BarChartView!
     
     @IBOutlet weak var durationTitleLabel: UILabel!
@@ -13,17 +14,19 @@ class dsViewController: UIViewController {
     @IBOutlet weak var startButton: UIBarButtonItem!
     @IBOutlet weak var stopButton: UIBarButtonItem!
     
+    // MARK: - View Actions
     @IBAction func simStopTap(_ sender: Any) {
         stopButton.isEnabled = false
         startButton.isEnabled = true
         dsData.stopSimulating()
     }
     
+    // MARK: - Private Properties
     // access to the simulation data
     private let dsData = dsDataSimulator()
-    
     private var timedPoints: [dsFtpDataPoint] = []
     
+    // MARK: - UIViewController Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +58,7 @@ class dsViewController: UIViewController {
         }
     }
 
+    // MARK: - Private Methods
     private func updateLabels(seconds: Double, ftpValue: Double) {
         // for first run show progress labels
         if durationTitleLabel.isHidden {
@@ -107,7 +111,7 @@ class dsViewController: UIViewController {
     }
 }
 
-// Extension to handle dsDataDelegate implementations
+// MARK: - dsDataDelegate implementations
 extension dsViewController: dsDataDelegate {
     // Add a new single data point to the chart
     func dsSimulatorPoint(ftpPoint: dsFtpDataPoint, seconds: Double) {
@@ -139,7 +143,7 @@ extension dsViewController: dsDataDelegate {
 
 }
 
-// Extension to handle dsSimSetupDelegate implementation
+// MARK: - dsSimSetupDelegate implementation
 extension dsViewController: dsSimSetupDelegate {
     // Set the speed of the simulation as set in the setup screen
     func beginSimulation(speed: dsSimulateSpeed) {

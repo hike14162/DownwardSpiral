@@ -1,5 +1,4 @@
-import Foundation
-
+// MARK: - dsSimulateSpeed enum
 public enum dsSimulateSpeed {
     case speedRealTime
     case speed2X

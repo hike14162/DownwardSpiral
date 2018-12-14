@@ -1,9 +1,11 @@
 import UIKit
 
 class dsSimulaterSetupController: UIViewController {
+    // MARK: - View Outlets
     @IBOutlet weak var speedSlider: UISlider!
     @IBOutlet weak var speedLabel: UILabel!
     
+    // MARK: - View Actions
     @IBAction func startSimulateTap(_ sender: Any) {
         if let dlgt = delegate {
             dlgt.beginSimulation(speed: speed)
@@ -40,10 +42,13 @@ class dsSimulaterSetupController: UIViewController {
         }
     }
 
+    // MARK: - Private Properties
     private var speed: dsSimulateSpeed = .speedRealTime
     
+    // MARK: - public Properties
     public var delegate: dsSimSetupDelegate?
     
+    // MARK: - UIViewController overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = (dsHelper.getNavBarAttributes() as! [NSAttributedString.Key : Any])

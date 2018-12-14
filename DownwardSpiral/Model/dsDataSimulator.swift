@@ -1,13 +1,16 @@
 import Foundation
 
-public class dsDataSimulator {
+final public class dsDataSimulator {
+    // MARK: - Private Properties
     private var ftpDataPoints: [dsFtpDataPoint] = []
     private var timeCount = 0
     private var okToSimulate = false
     private var secondChunk = 1
     
+    // MARK: - Public Properties
     public var delegate: dsDataDelegate?
 
+    // MARK: - Initializers
     // Init data by loading "dsRawData.json" from the bundle
     init() {
         ftpDataPoints = []
@@ -22,6 +25,7 @@ public class dsDataSimulator {
         fillTimeGaps()
     }
 
+    // MARK: - Public Methods
     // Method to being the simulation
     public func simulateData(simulationMode: dsSimulateMode, interval: Double, secondChunkSize: Int) {
         secondChunk = secondChunkSize
@@ -48,6 +52,7 @@ public class dsDataSimulator {
         return ftpDataPoints
     }
     
+    // MARK: - Private Methods
     @objc private func onSimulatorTick(_ timer: Timer) {
         if let dlgt = delegate {
             if timeCount >= ftpDataPoints.count { // stop time and simulation if out of data points
