@@ -10,6 +10,7 @@ class DownwardSpiralDataTests: XCTestCase {
     override func tearDown() {
     }
 
+    // MARK: - Data Simulator tests
     func testInit_DefaultDataSimulatorSetNotNil() {
         let data = dsDataSimulator()
         XCTAssertNotNil(data)
