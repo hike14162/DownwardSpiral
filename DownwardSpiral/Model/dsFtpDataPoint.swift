@@ -1,6 +1,6 @@
 import Foundation
 
-final public class dsFtpDataPoint {
+public struct dsFtpDataPoint {
     // MARK: - Public properties
     public var type: String
     public var start:Double
